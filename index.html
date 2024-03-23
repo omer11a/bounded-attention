@@ -177,7 +177,8 @@
                 Intuitively, we expect that along the denoising process, the attention queries corresponding to these pixels, Q[<b>x</b><sub>1</sub>] and Q[<b>x</b><sub>2</sub>], are similar and hence also their attention responses. This, in turn, also implies that they also share semantic information from the attention layers, a phenomenon we refer to as <em>semantic leakage</em>.
             </p>
             <p>
-		Here, We demonstrate the emergence of semantic leakage at the cross-attention layers. We show two examples: a puppy a kitten, and a hamster and a squirrel.
+		Here, We demonstrate the emergence of semantic leakage at the cross-attention layers.
+		We show two examples: a puppy a kitten, and a hamster and a squirrel.
 		In the two leftmost columns, the subjects were generated separately using Stable Diffusion (SD).
 		In the right three columns, we generate a single image with the two subjects using three different methods:
 		Stable Diffusion (SD), Layout Guidance (LG), and Bounded Attention (BA, ours).
@@ -185,16 +186,17 @@
 	    </p>
             <p>
 		The leftmost plot, in which the two subjects were generated separately, serves as a reference point to the relation between the queries when there is no leakage.
-		As can be seen in the reference plots, the kitten and puppy queries share some small overlap, and the hamster and squirrel queries are mixed together.
 		The level of separation between the red and blue dots in the plots reveals the semantic similarity of the two forming subjects.
+		As can be seen in the reference plots, the kitten and puppy queries share some small overlap, and the hamster and squirrel queries are mixed together.
 	    </p>
             <p>
-		Vanilla SD truggles to adequately generate the two subjects within the same image. This is apparent by the visual leakage between the two subjects, as well as the mix between their queries.
+		Vanilla SD truggles to adequately generate the two subjects within the same image.
+		This is apparent by the visual leakage between the two subjects, along with the blending of their respective queries.
 	    </p>
             <p>
 		LG optimizes the latent to have attention peaks for each noun token at their corresponding region.
 		Its optimization objective implicitly encourages the separation between subjects' cross-attention queries,
-		even though they should maintain their semantic similarity. This results in artifacts and quality degradation.
+		even though they should maintain their semantic similarity. This leads to artifacts and quality degradation.
 	    </p>
             <p>
 		Our approach preserves the feature distribution of the subjects' queries, and successfully generates the two subjects,
