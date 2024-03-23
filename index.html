@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Be Yourself</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KBKFF5WPJF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-KBKFF5WPJF');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Be Yourself: Bounded Attention for Multi-Subject Text-to-Image Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://omer11a.github.io/">Omer Dahary</a><sup>1</sup>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://orpatashnik.github.io/">Or Patashnik</a><sup>1,2</sup>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://kfiraberman.github.io/">Kfir Aberman</a><sup>2</sup>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://danielcohenor.com/">Daniel Cohen-Or</a><sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tel-Aviv University</span> &nbsp
+            <span class="author-block"><sup>2</sup>Snap Research</span>
+          </div>
+
+          <br>
+          <div>
+            <h1 class="title"></h1>
+          </div>
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (coming soon!)</span>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon!)</span>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="static/images/teaser.png">
+      <h2 class="subtitle has-text-centered">
+	Introducing <b>Bounded Attention</b>, a training-free technique for regulating the accurate generation of multi-subject images.
+      </h2>
+      <h2 class="subtitle has-text-centered">
+	We uncover that misalignments between prompts and images primarily stem from semantic leakage in both cross and self-attention layers.
+      </h2>
+      <h2 class="subtitle has-text-centered">
+	Bounded Attention combats this by empowering each subject to <b>"be yourself"</b>, prioritizing individuality and minimizing external influence from other subjects within the image.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="1">
+          <img src="static/images/xl_results/0.png">
+          <img src="static/images/xl_results/1.png">
+          <img src="static/images/xl_results/2.png">
+          <img src="static/images/xl_results/3.png">
+          <img src="static/images/xl_results/4.png">
+          <img src="static/images/xl_results/5.png">
+          <img src="static/images/xl_results/6.png">
+          <img src="static/images/xl_results/7.png">
+          <img src="static/images/xl_results/8.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-image diffusion models have an unprecedented ability to generate diverse and high-quality images.
+            However, they often struggle to faithfully capture the intended semantics of complex input prompts that include multiple subjects.
+            Recently, numerous layout-to-image extensions have been introduced to improve user control, aiming to localize subjects represented by specific tokens.
+            Yet, these methods often produce semantically inaccurate images, especially when dealing with multiple semantically or visually similar subjects.
+            In this work, we study and analyze the causes of these limitations.
+            Our exploration reveals that the primary issue stems from inadvertent semantic leakage between subjects in the denoising process.
+            This leakage is attributed to the diffusion model’s attention layers, which tend to blend the visual features of different subjects.
+            To address these issues, we introduce Bounded Attention, a training-free method for bounding the information flow in the sampling process.
+            Bounded Attention prevents detrimental leakage among subjects and enables guiding the generation to promote each subject's individuality,
+            even with complex multi-subject conditioning.
+            Through extensive experimentation, we demonstrate that our method empowers the generation of multiple subjects that better align with given prompts and layouts.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Semantic Leakage</h2>
+        <img src="static/images/semantic_leakage.png">
+          <div class="content has-text-justified">
+            <p>
+		We focus our analysis on semantically similar subjects, like a ''kitten'' and a ''puppy''.
+            </p>
+            <p>
+		Let <b>x</b><sub>1</sub> and <b>x</b><sub>2</sub>, be 2D latent coordinates corresponding to two semantically similar subjects in the generated image.
+                Intuitively, we expect that along the denoising process, the attention queries corresponding to these pixels, Q[<b>x</b><sub>1</sub>] and Q[<b>x</b><sub>2</sub>], are similar and hence also their attention responses. This, in turn, also implies that they also share semantic information from the attention layers, a phenomenon we refer to as <em>semantic leakage</em>.
+            </p>
+            <p>
+		Here, We demonstrate the emergence of semantic leakage at the cross-attention layers. We show two examples: a puppy a kitten, and a hamster and a squirrel.
+		In the two leftmost columns, the subjects were generated separately using Stable Diffusion (SD).
+		In the right three columns, we generate a single image with the two subjects using three different methods:
+		Stable Diffusion (SD), Layout Guidance (LG), and Bounded Attention (BA, ours).
+		Under each row, we plot the two first principal components of the cross-attention queries.
+	    </p>
+            <p>
+		The leftmost plot, in which the two subjects were generated separately, serves as a reference point to the relation between the queries when there is no leakage.
+		As can be seen in the reference plots, the kitten and puppy queries share some small overlap, and the hamster and squirrel queries are mixed together.
+		The level of separation between the red and blue dots in the plots reveals the semantic similarity of the two forming subjects.
+	    </p>
+            <p>
+		Vanilla SD truggles to adequately generate the two subjects within the same image. This is apparent by the visual leakage between the two subjects, as well as the mix between their queries.
+	    </p>
+            <p>
+		LG optimizes the latent to have attention peaks for each noun token at their corresponding region.
+		Its optimization objective implicitly encourages the separation between subjects' cross-attention queries,
+		even though they should maintain their semantic similarity. This results in artifacts and quality degradation.
+	    </p>
+            <p>
+		Our approach preserves the feature distribution of the subjects' queries, and successfully generates the two subjects,
+		even when the queries are as mixed as in the hamster and the squirrel.
+	    </p>
+            <p>
+		The above analysis yields two immediate conclusions: 
+		(i) Semantic similarity between subjects is reflected by their queries proximity, and leads to mixed queries when the subjects are generated together.
+		This in turn leads to leakage between the subjects in the generated images,
+		and (ii) enforcing semantic separation by modifying the semantic meaning of the cross-attention queries is harmful.
+            </p>
+            <p>In the paper we also demonstrate that semantic leakage can occur in the self-attention layers, and even between semantically dissimilar subjects!</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">How does it work?</h2>
+        <img src="static/images/overview.png">
+          <div class="content has-text-justified">
+            <p>
+            Bounded Attention operates in two modes: guidance and denoising.
+            In each mode, strict constraints are imposed to bound the attention of each subject solely to itself and, possibly, to the background,
+            thereby preventing any influence from other subjects' features.
+            </p>
+            <p>
+            In guidance mode, we minimize a loss that encourages each subject's attention to concentrate within its corresponding bounding box.
+            When calculating this loss, we mask the other bounding boxes, to prevent artifacts introduced by forcing subject queries to be far apart.
+            </p>
+            <p>
+            During the denoising step, we confine the attention of each subject solely to its bounding box, along with the background in the self-attention.
+            This strategy effectively prevents feature leakage while maintaining the natural immersion of the subject within the image.
+            </p>
+            <p>
+            To demonstrate each of these modes, we show the attention map of a specific key, marked with a star.
+            For the cross-attention map, we show the key corresponding to the ''kitten'' token, and for the self-attention map, we show a key that lies in the kitten's target bounding box. 
+            </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Subject Mask Refinement</h2>
+        <img class="my-image" src="static/images/mask_refinement.png">
+        <div class="content has-text-justified">
+          <p>
+          We find that coarse masking in later stages may degrade image quality and result in noticeable stitching.
+          To address this, after the optimization phase, we replace each bounding box with a fine segmentation mask obtained by periodically clustering the self-attention maps.
+          </p>
+	</div>
+        <img class="my-image" src="static/images/attention_maps.png">
+        <div class="content has-text-justified">
+          <p>
+          Bounded Attention utilizes these masks to align the evolving image structure (represented by the self-attention maps) with its semantics
+          (reflected by the cross-attention maps).
+          Eemploying this technique enhances the robustness of our method to seed selection, ensuring proper semantics even when subjects extend beyond their initial confines.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website source code based on the <a href="https://nerfies.github.io/">Nerfies</a> project page. If you want to reuse their <a href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
