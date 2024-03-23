@@ -99,7 +99,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img class="my-image" src="static/images/teaser.png">
+      <img src="static/images/teaser.png">
       <h2 class="subtitle has-text-centered">
 	Introducing <b>Bounded Attention</b>, a training-free technique for regulating the accurate generation of multi-subject images.
       </h2>
@@ -173,8 +173,10 @@
 		We focus our analysis on semantically similar subjects, like a ''kitten'' and a ''puppy''.
             </p>
             <p>
-		Let <b>x</b><sub>1</sub> and <b>x</b><sub>2</sub>, be 2D latent coordinates corresponding to two semantically similar subjects in the generated image.
-                Intuitively, we expect that along the denoising process, the attention queries corresponding to these pixels, Q[<b>x</b><sub>1</sub>] and Q[<b>x</b><sub>2</sub>], are similar and hence also their attention responses. This, in turn, also implies that they also share semantic information from the attention layers, a phenomenon we refer to as <em>semantic leakage</em>.
+		Let <b>x</b><sub>1</sub> and <b>x</b><sub>2</sub> be 2D latent coordinates corresponding to two semantically similar subjects in the generated image.
+                Intuitively, we expect that along the denoising process, the attention queries corresponding to these pixels,
+		Q[<b>x</b><sub>1</sub>] and Q[<b>x</b><sub>2</sub>], will be similar and hence also their attention responses.
+		This, in turn, implies that they will share semantic information from the attention layers, a phenomenon we refer to as <em>semantic leakage</em>.
             </p>
             <p>
 		Here, We demonstrate the emergence of semantic leakage at the cross-attention layers.
@@ -183,10 +185,10 @@
 		In the right three columns, we generate a single image with the two subjects using three different methods:
 		Stable Diffusion (SD), Layout Guidance (LG), and Bounded Attention (BA, ours).
 		Under each row, we plot the two first principal components of the cross-attention queries.
+		The level of separation between the red and blue dots in the plots reveals the semantic similarity of the two forming subjects.
 	    </p>
             <p>
 		The leftmost plot, in which the two subjects were generated separately, serves as a reference point to the relation between the queries when there is no leakage.
-		The level of separation between the red and blue dots in the plots reveals the semantic similarity of the two forming subjects.
 		As can be seen in the reference plots, the kitten and puppy queries share some small overlap, and the hamster and squirrel queries are mixed together.
 	    </p>
             <p>
@@ -202,12 +204,6 @@
 		Our approach preserves the feature distribution of the subjects' queries, and successfully generates the two subjects,
 		even when the queries are as mixed as in the hamster and the squirrel.
 	    </p>
-            <p>
-		The above analysis yields two immediate conclusions: 
-		(i) Semantic similarity between subjects is reflected by their queries proximity, and leads to mixed queries when the subjects are generated together.
-		This in turn leads to leakage between the subjects in the generated images,
-		and (ii) enforcing semantic separation by modifying the semantic meaning of the cross-attention queries is harmful.
-            </p>
             <p>In the paper we also demonstrate that semantic leakage can occur in the self-attention layers, and even between semantically dissimilar subjects!</p>
         </div>
       </div>
