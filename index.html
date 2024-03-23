@@ -168,7 +168,7 @@
       <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">Semantic Leakage</h2>
           <div class="content has-text-justified">
-            <img class="my-image" src="static/images/semantic_leakage.png" style="width:200px; height:auto;">
+            <img class="my-image" src="static/images/semantic_leakage.png" style="width:400px; height:auto;">
             <p>
 		We focus our analysis on semantically similar subjects, like a ''kitten'' and a ''puppy''.
             </p>
@@ -218,7 +218,7 @@
       <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">How does it work?</h2>
           <div class="content has-text-justified">
-            <img class="my-image" src="static/images/overview.png" style="width:300px; height:auto;">
+            <img class="my-image" src="static/images/overview.png" style="width:600px; height:auto;">
             <p>
             Bounded Attention operates in two modes: guidance and denoising.
             In each mode, strict constraints are imposed to bound the attention of each subject solely to itself and, possibly, to the background,
@@ -247,13 +247,13 @@
       <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">Subject Mask Refinement</h2>
         <div class="content has-text-justified">
-        <img class="my-image" src="static/images/mask_refinement.png" style="width:300px; height:auto;">
+        <img class="my-image" src="static/images/mask_refinement.png" style="width:450px; height:auto;">
           <p>
           We find that coarse masking in later stages may degrade image quality and result in noticeable stitching.
           To address this, after the optimization phase, we replace each bounding box with a fine segmentation mask obtained by periodically clustering the self-attention maps.
           </p>
 	</div>
-        <img class="my-image" src="static/images/attention_maps.png" style="width:100px; height:auto;">
+        <img class="my-image" src="static/images/attention_maps.png" style="width:350px; height:auto;">
         <div class="content has-text-justified">
           <p>
           Bounded Attention utilizes these masks to align the evolving image structure (represented by the self-attention maps) with its semantics
