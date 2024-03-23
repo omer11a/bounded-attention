@@ -103,10 +103,10 @@
       <h2 class="subtitle has-text-centered">
 	Introducing <b>Bounded Attention</b>, a training-free technique for regulating the accurate generation of multi-subject images.
       </h2>
-      <h2 class="subtitle has-text-centered">
+      <h3 class="subtitle has-text-centered">
 	We uncover that misalignments between prompts and images primarily stem from semantic leakage in both cross and self-attention layers.
       </h2>
-      <h2 class="subtitle has-text-centered">
+      <h3 class="subtitle has-text-centered">
 	Bounded Attention combats this by empowering each subject to <b>"be yourself"</b>, prioritizing individuality and minimizing external influence from other subjects within the image.
       </h2>
     </div>
@@ -169,7 +169,7 @@
   <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">Semantic Leakage</h2>
-        <img src="static/images/semantic_leakage.png">
+        <img src="static/images/semantic_leakage.png" style="width:200px; height:auto;">
           <div class="content has-text-justified">
             <p>
 		We focus our analysis on semantically similar subjects, like a ''kitten'' and a ''puppy''.
@@ -219,7 +219,7 @@
   <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">How does it work?</h2>
-        <img src="static/images/overview.png">
+        <img src="static/images/overview.png" style="width:300px; height:auto;">
           <div class="content has-text-justified">
             <p>
             Bounded Attention operates in two modes: guidance and denoising.
@@ -248,14 +248,14 @@
   <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
       <h2 class="title is-3">Subject Mask Refinement</h2>
-        <img class="my-image" src="static/images/mask_refinement.png">
+        <img class="my-image" src="static/images/mask_refinement.png" style="width:300px; height:auto;">
         <div class="content has-text-justified">
           <p>
           We find that coarse masking in later stages may degrade image quality and result in noticeable stitching.
           To address this, after the optimization phase, we replace each bounding box with a fine segmentation mask obtained by periodically clustering the self-attention maps.
           </p>
 	</div>
-        <img class="my-image" src="static/images/attention_maps.png">
+        <img class="my-image" src="static/images/attention_maps.png" style="width:100px; height:auto;">
         <div class="content has-text-justified">
           <p>
           Bounded Attention utilizes these masks to align the evolving image structure (represented by the self-attention maps) with its semantics
