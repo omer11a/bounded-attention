@@ -24,6 +24,8 @@ To install dependencies, please run:
 pip install -r requirements.txt
 ```
 
+### Demo
+
 This project has a gradio [demo](https://huggingface.co/spaces/omer11a/bounded-attention) deployed in HuggingFace.
 To run the demo locally, run the following: 
 ```shell
