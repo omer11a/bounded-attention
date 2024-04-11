@@ -40,7 +40,7 @@ Example generations by SDXL with and without Bounded Attention.
 </p>
 
 
-To generate images, you can run `run_xl.py` for our SDXL version, and 'run_sd.py" for our Stable Diffusion version.
+To generate images, you can run `run_xl.py` for our SDXL version, and `run_sd.py` for our Stable Diffusion version.
 In each script, we call the `run` function to generate the images. E.g.,
 ```
 boxes = [
@@ -61,7 +61,7 @@ The `run` function recieves the following parameters:
 - subject_token_indices: The indices of each token belonging to each subject, where the indices start from 1. Tokens can be shared between subjects.
 - out_dir: The output directory. Defaults to "out".
 - seed: The random seed.
-- batch_size: The number of generated images. Defaults to 1.
+- batch_size: The number of generated images.
 - filter_token_indices: The indices of the tokens to ignore. This is automatically inferred, but we recommend explicitly ignoring prepositions, numbers and positional relations.
 - eos_token_index: The index of the EOS token (the first padding token appended to the end of the prompt). This is automatically inferred, but we recommend explicitly passing it, as we use it to verify you have correctly counted the number of tokens.
 - init_step_size: The initial step size of the linear step size scheduler when performing guidance.
@@ -70,8 +70,8 @@ The `run` function recieves the following parameters:
 - cross_loss_scale: The scale factor of the cross-attention loss term. Increasing it will improve semantic control (adherence to the prompt), but may reduce image quality.
 - self_loss_scale: The scale factor of the self-attention loss term. Increasing it will improve layout control (adherence to the bounding boxes), but may reduce image quality.
 - classifier_free_guidance_scale: The scale factor of classifier-free guidance.
-- num_guidance_steps: The number of timesteps in which to perform guidance. Defaults to 15. Decreasing this also decreases the runtime.
-- first_refinement_step: The timestep from which subject mask refinement is performed. Defaults to 15.
+- num_guidance_steps: The number of timesteps in which to perform guidance. Decreasing this also decreases the runtime.
+- first_refinement_step: The timestep from which subject mask refinement is performed.
 - num_gd_iterations: The number of Gradient Descent iterations for each timestep when performing guidance.
 - loss_threshold: If the loss is below the threshold, Gradient Descent stops for that timestep.
 
