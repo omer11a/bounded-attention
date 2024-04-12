@@ -35,6 +35,8 @@ Then, you can connect to the local demo by browsing to `http://localhost:7860/`.
 
 ## Usage
 
+### Basics
+
 <p align="center">
 <img src="images/example.jpg" width="800px"/>  
 <br>
@@ -66,6 +68,11 @@ The `run` function recieves the following parameters:
 - batch_size: The number of generated images.
 - filter_token_indices: The indices of the tokens to ignore. This is automatically inferred, but we recommend explicitly ignoring prepositions, numbers and positional relations.
 - eos_token_index: The index of the EOS token (the first padding token appended to the end of the prompt). This is automatically inferred, but we recommend explicitly passing it, as we use it to verify you have correctly counted the number of tokens.
+
+### Advanced options
+
+The `run` function also supports the following optional hyperparameters:
+
 - init_step_size: The initial step size of the linear step size scheduler when performing guidance.
 - final_step_size: The final step size of the linear step size scheduler when performing guidance.
 - num_clusters_per_subject: The number of clusters computed when clustering the self-attention maps (#clusters = #subject x #clusters_per_subject). Changing this value might improve semantics (adherence to the prompt), especially when the subjects exceed their bounding boxes.
@@ -76,7 +83,6 @@ The `run` function recieves the following parameters:
 - first_refinement_step: The timestep from which subject mask refinement is performed.
 - num_gd_iterations: The number of Gradient Descent iterations for each timestep when performing guidance.
 - loss_threshold: If the loss is below the threshold, Gradient Descent stops for that timestep.
-
 
 ## Acknowledgements 
 
