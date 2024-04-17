@@ -35,14 +35,13 @@ Then, you can connect to the local demo by browsing to `http://localhost:7860/`.
 
 ## Usage
 
-### Basics
-
 <p align="center">
 <img src="images/example.jpg" width="800px"/>  
 <br>
 Example generations by SDXL with and without Bounded Attention.
 </p>
 
+### Basics
 
 To generate images, you can run `run_xl.py` for our SDXL version, and `run_sd.py` for our Stable Diffusion version.
 In each script, we call the `run` function to generate the images. E.g.,
@@ -60,7 +59,7 @@ run(boxes, prompt, subject_token_indices, init_step_size=25, final_step_size=10)
 ```
 
 The `run` function recieves the following parameters:
-- boxes: the bounding box of each subject in the format [(x0, y0, x1, x2), ...], where the top-left corner is x=0,y=0 and the bottom-right corner is x=1,y=1.
+- boxes: the bounding box of each subject in the format [(x0, y0, x1, x2), ...], where x=0,y=0 represents the top-left corner of the image, and x=1,y=1 represents the bottom-right corner.
 - prompt: the textual prompt.
 - subject_token_indices: The indices of each token belonging to each subject, where the indices start from 1. Tokens can be shared between subjects.
 - out_dir: The output directory. Defaults to "out".
