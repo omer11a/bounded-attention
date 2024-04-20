@@ -103,6 +103,8 @@ class BoundedAttention(injection_utils.AttentionBase):
         self.num_self_maps = 0
         self.self_masks = None
 
+        nltk.download("averaged_perceptron_tagger")
+
     def clear_values(self, include_maps=False):
         lists = (
             self.cross_foreground_values,
