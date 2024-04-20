@@ -17,11 +17,21 @@ Official implementation of our "Be Yourself: Bounded Attention for Multi-Subject
 
 ## Setup
 
-### Dependencies
-To install dependencies, please run:
+### Environment
+
+To set up the environment, run:
 
 ```
+conda create --name bounded-attention python=3.11.4
+conda activate bounded-attention
 pip install -r requirements.txt
+```
+
+Then, run in Python:
+
+```
+import nltk
+nltk.download('averaged_perceptron_tagger')
 ```
 
 ### Demo
