@@ -1,4 +1,4 @@
-# Be Yourself: Bounded Attention for Multi-Subject Text-to-Image Generation
+# Be Yourself: Bounded Attention for Multi-Subject Text-to-Image Generation (ECCV 2024)
 
 > **Omer Dahary, Or Patashnik, Kfir Aberman, Daniel Cohen-Or**
 > 
