@@ -31,12 +31,12 @@ class BoundedAttention(injection_utils.AttentionBase):
         leading_token_indices=None,
         mask_cross_during_guidance=True,
         mask_eos=True,
-        cross_loss_coef=1,
-        self_loss_coef=1,
+        cross_loss_coef=1.5,
+        self_loss_coef=0.5,
         max_guidance_iter=15,
         max_guidance_iter_per_step=5,
-        start_step_size=30,
-        end_step_size=10,
+        start_step_size=18,
+        end_step_size=5,
         loss_stopping_value=0.2,
         min_clustering_step=15,
         cross_mask_threshold=0.2,
@@ -271,7 +271,8 @@ class BoundedAttention(injection_utils.AttentionBase):
         min_value = torch.finfo(dtype).min
         sim_masks = torch.zeros((batch_size, n, n), dtype=dtype, device=device)  # b i j
         for batch_index, background_mask in zip(range(batch_size), background_masks):
-            sim_masks[batch_index, ~background_mask, ~background_mask] = min_value
+            all_subject_mask = ~background_mask.unsqueeze(0) * ~background_mask.unsqueeze(1)
+            sim_masks[batch_index, all_subject_mask] = min_value
 
         for batch_index in range(batch_size):
             for subject_mask in subject_masks[batch_index]:

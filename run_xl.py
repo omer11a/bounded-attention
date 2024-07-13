@@ -23,16 +23,16 @@ def run(
     prompt,
     subject_token_indices,
     out_dir='out',
-    seed=286,
+    seed=160,
     batch_size=1,
     filter_token_indices=None,
     eos_token_index=None,
-    init_step_size=30,
-    final_step_size=10,
+    init_step_size=18,
+    final_step_size=5,
     first_refinement_step=15,
     num_clusters_per_subject=3,
-    cross_loss_scale=1,
-    self_loss_scale=1,
+    cross_loss_scale=1.5,
+    self_loss_scale=0.5,
     classifier_free_guidance_scale=7.5,
     num_gd_iterations=5,
     loss_threshold=0.2,
@@ -81,15 +81,17 @@ def run(
 
 def main():
     boxes = [
-        [0.35, 0.4, 0.65, 0.9],
-        [0, 0.6, 0.3, 0.9],
-        [0.7, 0.55, 1, 0.85],
+        [0, 0.5, 0.2, 0.8],
+        [0.2, 0.2, 0.4, 0.5],
+        [0.4, 0.5, 0.6, 0.8],
+        [0.6, 0.2, 0.8, 0.5],
+        [0.8, 0.5, 1, 0.8],
     ]
 
-    prompt = "3 D Pixar animation of a cute unicorn and a pink hedgehog and a nerdy owl traveling in a magical forest"
-    subject_token_indices = [[7, 8, 17], [11, 12, 17], [15, 16, 17]]
+    prompt = "a golden retriever and a german shepherd and a boston terrier and an english bulldog and a border collie in a pool"
+    subject_token_indices = [[2, 3], [6, 7], [10, 11], [14, 15], [18, 19]]
 
-    run(boxes, prompt, subject_token_indices, init_step_size=25, final_step_size=10)
+    run(boxes, prompt, subject_token_indices, init_step_size=18, final_step_size=5)
 
 
 if __name__ == "__main__":
