@@ -69,7 +69,7 @@ run(boxes, prompt, subject_token_indices, init_step_size=25, final_step_size=10)
 ```
 
 The `run` function receives the following parameters:
-- boxes: the bounding box of each subject in the format [(x0, y0, x1, x2), ...], where x=0,y=0 represents the top-left corner of the image, and x=1,y=1 represents the bottom-right corner.
+- boxes: the bounding box of each subject in the format [(x0, y0, x1, y1), ...], where x=0,y=0 represents the top-left corner of the image, and x=1,y=1 represents the bottom-right corner.
 - prompt: the textual prompt.
 - subject_token_indices: The indices of each token belonging to each subject, where the indices start from 1. Tokens can be shared between subjects.
 - out_dir: The output directory. Defaults to "out".
